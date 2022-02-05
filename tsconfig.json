@@ -1,0 +1,60 @@
+/* To learn more about this file see: https://angular.io/config/tsconfig. */
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "baseUrl": "./",
+    "outDir": "./dist/out-tsc",
+    "rootDirs": [
+      "src/*",
+      "dist/*"
+    ],
+    "declaration": true,
+    "declarationDir": "./dist",
+    "declarationMap": true,
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "strict": true,
+    "noImplicitOverride": true,
+    "noPropertyAccessFromIndexSignature": true,
+    "noImplicitReturns": true,
+    "noImplicitAny": true,
+    "noFallthroughCasesInSwitch": true,
+    "sourceMap": true,
+    "declaration": true,
+    "downlevelIteration": true,
+    "experimentalDecorators": true,
+    "moduleResolution": "node",
+    "importHelpers": true,
+    "target": "es2017",
+    "module": "es2020",
+    "lib": [
+      "es2020",
+      "dom"
+    ],
+    "typeRoots": [
+      "./src/types/index.d.ts",
+      "node_modules/@types"
+    ],
+    "paths": {
+      "@/*": [ "src/*", "dist/*" ],
+      "@typedefs/*": [ "src/typedefs/*", "dist/typedefs/*" ],
+      "@models/*": [ "src/models/*", "dist/models/*" ],
+      "@factories/*": [ "src/factories/*", "dist/factories/*" ]
+    },
+    "plugins": [
+      {
+        "transform": "typescript-transform-paths",
+        "useRootDirs": true,
+        "afterDeclarations": true
+      }
+    ]
+  },
+  "include": [ "src" ],
+  "exclude": [ "node_modules", "**/*.spec.ts" ],
+  "ts-node": {
+    "transpileOnly": true,
+    "require": [
+      "typescript-transform-paths/register"
+    ]
+  }
+}
